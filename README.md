@@ -1,5 +1,5 @@
 # Kunkka
-
+Sample project to handle dialog popup order by priority at activity.
 
 ### Import
 
