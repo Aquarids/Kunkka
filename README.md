@@ -3,14 +3,24 @@ Sample project to handle dialog popup order by priority at activity.
 
 ### Import
 
+```groovy
+//Add it in your root build.gradle at the end of repositories:
+maven { url 'https://jitpack.io' }
+```
+```groovy
+//Add the dependency
+compile 'com.github.Aquarids:Kunkka:0.0.3'
+```
+[![import](https://jitpack.io/v/Aquarids/Kunkka.svg)](https://jitpack.io/#Aquarids/Kunkka)
+
 ### Usage
 
-```
+```kotlin
 // Make your dialog extend DialogMixin
 class BottomSampleDialog(var context: Context) : DialogMixin(DialogTag(DialogManager.PRIORITY_LOW, DialogConstant.DIALOG_TEST)) {}
 ```
-```
-// Add your dialog to manager then start it 
+```kotlin
+// Add your dialog to manager then start it
 mDialogManager.addDialog(BottomSampleDialog(this))
 mDialogManager.start(this)
 ```
