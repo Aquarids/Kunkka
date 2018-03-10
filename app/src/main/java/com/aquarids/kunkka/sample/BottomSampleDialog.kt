@@ -35,6 +35,7 @@ class BottomSampleDialog(var context: Context) : DialogMixin(DialogTag(DialogMan
     fun hide() {
         if (context is Activity && !context.isActivityFinished()) {
             mDialog.dismiss()
+            listener?.onDialogDismiss()
         }
     }
 }
