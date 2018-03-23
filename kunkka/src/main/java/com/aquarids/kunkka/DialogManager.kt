@@ -32,6 +32,9 @@ class DialogManager {
 
     fun start(context: Context) {
         contextWeak = WeakReference(context)
+        if (mDialogList.size <= 0) {
+            return
+        }
         if (!mIsRunning) {
             contextWeak?.get()?.let {
                 showDialog(it)
@@ -40,10 +43,11 @@ class DialogManager {
     }
 
     private fun showDialog(context: Context) {
-        if (mDialogList.size <= 0) {
-            return
-        } else if (context is Activity && !context.isActivityFinish() && !mIsRunning) {
+        if (context is Activity && !context.isActivityFinish() && !mIsRunning) {
             mDialogList[0].show()
+        } else {
+            mDialogList.clear()
+            mIsRunning = false
         }
     }
 

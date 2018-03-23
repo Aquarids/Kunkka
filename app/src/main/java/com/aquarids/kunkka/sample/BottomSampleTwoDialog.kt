@@ -7,7 +7,7 @@ import com.aquarids.kunkka.DialogManager
 import com.aquarids.kunkka.DialogMixin
 import com.aquarids.kunkka.DialogTag
 
-class BottomSampleDialog(var context: Context) : DialogMixin(DialogTag(DialogManager.PRIORITY_HIGH, DialogConstant.DIALOG_TEST)) {
+class BottomSampleTwoDialog(var context: Context) : DialogMixin(DialogTag(DialogManager.PRIORITY_NORMAL, DialogConstant.DIALOG_TEST)) {
 
     private val mDialog by lazy { BottomSheetDialog(context) }
 

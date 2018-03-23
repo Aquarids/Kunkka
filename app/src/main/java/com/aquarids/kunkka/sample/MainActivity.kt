@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         mDialogManager.addDialog(BottomSampleDialog(this))
+        mDialogManager.addDialog(BottomSampleTwoDialog(this))
+        mDialogManager.addDialog(BottomSampleThreeDialog(this))
         mDialogManager.start(this)
     }
 }
