@@ -1,6 +1,5 @@
 package com.aquarids.kunkka.sample
 
-import android.app.Activity
 import android.content.Context
 import android.support.design.widget.BottomSheetDialog
 import android.widget.TextView
@@ -19,23 +18,15 @@ class BottomSampleDialog(var context: Context) : DialogMixin(DialogTag(DialogMan
         mTvClose = mDialog.findViewById(R.id.tv_close)
 
         mTvClose?.setOnClickListener {
-            hide()
+            dismiss()
         }
     }
 
     override fun show() {
-        if (context is Activity && !context.isActivityFinished()) {
-            mDialog.show()
-            listener?.onDialogShow()
-        } else {
-            listener?.onDialogDismiss()
-        }
+        mDialog.show()
     }
 
-    fun hide() {
-        if (context is Activity && !context.isActivityFinished()) {
-            mDialog.dismiss()
-            listener?.onDialogDismiss()
-        }
+    override fun dismiss() {
+        mDialog.dismiss()
     }
 }
