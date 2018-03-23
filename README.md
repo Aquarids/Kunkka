@@ -9,7 +9,7 @@ maven { url 'https://jitpack.io' }
 ```
 ```groovy
 //Add the dependency
-compile 'com.github.Aquarids:Kunkka:0.0.3'
+compile 'com.github.Aquarids:Kunkka:0.0.4'
 ```
 [![import](https://jitpack.io/v/Aquarids/Kunkka.svg)](https://jitpack.io/#Aquarids/Kunkka)
 
