@@ -38,6 +38,9 @@ class DialogManager {
         if (!mIsRunning) {
             contextWeak?.get()?.let {
                 showDialog(it)
+                if (mDialogList.size > 0) {
+                    mDialogList.removeAt(0)
+                }
             }
         }
     }
@@ -63,10 +66,6 @@ class DialogManager {
     private val listener = object : DialogManagerListener {
         override fun onDialogShow() {
             mIsRunning = true
-            if (mDialogList.size <= 0) {
-                return
-            }
-            mDialogList.removeAt(0)
         }
 
         override fun onDialogDismiss() {
