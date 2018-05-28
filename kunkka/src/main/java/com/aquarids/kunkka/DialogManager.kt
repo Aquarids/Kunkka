@@ -38,9 +38,6 @@ class DialogManager {
         if (!mIsRunning) {
             contextWeak?.get()?.let {
                 showDialog(it)
-                if (mDialogList.size > 0) {
-                    mDialogList.removeAt(0)
-                }
             }
         }
     }
@@ -48,6 +45,9 @@ class DialogManager {
     private fun showDialog(context: Context) {
         if (context is Activity && !context.isActivityFinish() && !mIsRunning) {
             mDialogList[0].show()
+            if (mDialogList.size > 0) {
+                mDialogList.removeAt(0)
+            }
         } else {
             mDialogList.clear()
             mIsRunning = false
